@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements CC1101Manager.Pac
     @Override
     protected void onStop() {
         super.onStop();
+        mManager.setPacketListener(null);
+        mManager.close();
     }
 
     @Override
