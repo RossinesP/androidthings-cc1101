@@ -32,7 +32,7 @@ Then, include the cc1101-driver library from this project into your app. It is n
 
 Implement the PacketListener interface (for example have your Activity implement this interface)
 Finally, create a CC1101Manager instance, initialize it, add a packet listener and start the Rxmode :
-'''
+```
 @Override
 protected void onStart() {
     super.onStart();
@@ -45,17 +45,17 @@ protected void onStart() {
     mManager.setPacketListener(this);
     mManager.setRxState();
 }
-'''
+```
 
 Don't forger to unregister the manager when you don't need it anymore :
-'''
+```
 @Override
 protected void onStop() {
     super.onStop();
     mManager.setPacketListener(null);
     mManager.close();
 }
-'''
+```
 
 The 'onNewPacket' method should then be called when a new packet is received.
 
